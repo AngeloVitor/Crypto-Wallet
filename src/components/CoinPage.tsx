@@ -4,7 +4,7 @@ import {
   useGetCryptoGraphQuery,
 } from '../redux/services/cryptoApi';
 import Spinner from 'react-bootstrap/Spinner';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Table } from 'react-bootstrap';
 import { useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -95,46 +95,56 @@ export const CryptoDetails = () => {
             />
             <h3>{selectedCrypto.name}</h3>
           </div>
-          <Row>
-            <Col>
-              <p>
-                Preço Atual:{' '}
-                {selectedCrypto.current_price.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </p>
-              <p>
-                Variação de Preço nas Últimas 24 Horas:{' '}
-                {selectedCrypto.price_change_24h.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </p>
-              <p>
-                Alta nas Últimas 24 Horas:{' '}
-                {selectedCrypto.high_24h.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </p>
-              <p>
-                Baixa nas Últimas 24 Horas:{' '}
-                {selectedCrypto.low_24h.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </p>
-              <p>
-                Volume de Mercado:{' '}
-                {selectedCrypto.total_volume.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </p>
-              {/* Adicione aqui o gráfico de preço, se possível */}
-            </Col>
-          </Row>
+          <Table striped bordered hover variant="dark">
+            <tbody>
+              <tr>
+                <td>Preço Atual:</td>
+                <td>
+                  {selectedCrypto.current_price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Variação de Preço nas Últimas 24 Horas:</td>
+                <td>
+                  {selectedCrypto.price_change_24h.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Alta nas Últimas 24 Horas:</td>
+                <td>
+                  {selectedCrypto.high_24h.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Baixa nas Últimas 24 Horas:</td>
+                <td>
+                  {selectedCrypto.low_24h.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Volume de Mercado:</td>
+                <td>
+                  {selectedCrypto.total_volume.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+          {/* Adicione aqui o gráfico de preço, se possível */}
         </Col>
       </Row>
       <Container className="d-flex" style={{ height: '500px' }}>

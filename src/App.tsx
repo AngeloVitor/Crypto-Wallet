@@ -10,7 +10,6 @@ const tokenImage = 'http://placekitten.com/200/300';
 export const App = () => {
   const [account, setAccount] = useState<string>();
   const { sdk, connected, connecting, provider, chainId } = useSDK();
-  console.log(provider, connected);
 
   const connect = async () => {
     try {
@@ -23,14 +22,14 @@ export const App = () => {
 
   return (
     <div className="App">
-      <Navbar bg="dark" data-bs-theme="dark" expand="lg">
-        <Navbar.Brand href="#">Minha Aplicação</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar bg="dark" data-bs-theme="dark" expand="lg" >
+        <Navbar.Brand href="#" className='mx-3'>Wallet Crypto</Navbar.Brand >
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className='mx-3' />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="ml-auto justify-content-end"
         >
-          <Nav className="ml-auto ">
+          <Nav className="ml-auto mx-3">
             <Nav.Link onClick={connect}>
               {account ? `Conta conectada: ${account}` : 'conectar'}
             </Nav.Link>

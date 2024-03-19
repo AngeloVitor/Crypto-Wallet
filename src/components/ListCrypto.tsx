@@ -17,20 +17,20 @@ export const ListCrypto = () => {
       </h1>
       <div className="crypto-wallet">
         {error ? (
-          <div className="error-message">Oh não, ocorreu um erro</div>
+          <div className="error-message">ocorreu um erro</div>
         ) : isLoading ? (
           <div className="loading-spinner">
             <Spinner animation="border" role="status">
-              <span className="sr-only">Carregando...</span>
+              <span className="sr-only"></span>
             </Spinner>
           </div>
         ) : data ? (
           <>
-            <Table striped bordered hover>
+            <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th className="text-center">Imagem</th>
-                  <th className="text-center">Nome</th>
+                  <th className="text-center">Moedas:</th>
+                  <th className="text-center">Nome:</th>
                   <th className="text-center">Preço Atual (R$)</th>
                 </tr>
               </thead>
