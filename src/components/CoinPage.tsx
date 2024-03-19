@@ -1,16 +1,57 @@
 import { useParams } from 'react-router-dom';
 import {
   useGetTopTenCryptoQuery,
-  // useGetCryptoGraphQuery,
+  useGetCryptoGraphQuery,
 } from '../redux/services/cryptoApi';
 import Spinner from 'react-bootstrap/Spinner';
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import { useMemo } from 'react';
+import { Line } from 'react-chartjs-2';
+import {
+  CategoryScale,
+  Chart,
+  LinearScale,
+  PointElement,
+  LineElement,
+} from 'chart.js';
+Chart.register(CategoryScale);
+Chart.register(LinearScale);
+Chart.register(PointElement);
+Chart.register(LineElement);
 
 export const CryptoDetails = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetTopTenCryptoQuery('');
+
   // TODO: fazer grafico da moeda
-  // const { data: graphData, error: graphError, isLoading: GraphIsLoading } = useGetCryptoGraphQuery(id??"");
+  const {
+    data: graphaAPIData,
+    // error: graphError,
+    // isLoading: GraphIsLoading,
+  } = useGetCryptoGraphQuery(id ?? '');
+  const graphDataFormatted = useMemo(() => {
+    return {
+      labels:
+        graphaAPIData?.prices.map((item) => new Date(item[0]).toDateString()) ||
+        [],
+      data: graphaAPIData?.prices.map((item) => item[1]) || [],
+    };
+  }, [graphaAPIData?.prices]);
+
+  const graphData = useMemo(() => {
+    return {
+      labels: graphDataFormatted.labels,
+      datasets: [
+        {
+          label: 'My First Dataset',
+          data: graphDataFormatted.data,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1,
+        },
+      ],
+    };
+  }, [graphDataFormatted]);
 
   // Verifica se os dados estão carregando ou se ocorreu um erro
   if (isLoading) {
@@ -96,6 +137,16 @@ export const CryptoDetails = () => {
           </Row>
         </Col>
       </Row>
+      <Container className="d-flex" style={{ height: '500px' }}>
+        <Line
+          options={{
+            maintainAspectRatio: false,
+            aspectRatio: 1,
+            responsive: true,
+          }}
+          data={graphData}
+        />
+      </Container>
     </Container>
   );
 };
