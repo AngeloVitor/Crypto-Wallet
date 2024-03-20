@@ -2,12 +2,14 @@ import { useGetTopTenCryptoQuery } from '../redux/services/cryptoApi';
 import { useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 export const ListCrypto = () => {
   const { data, error, isLoading } = useGetTopTenCryptoQuery('');
   const navigate = useNavigate();
   const handleDetailCoin = (id: string) => {
-    navigate(`/${id}`)
+    navigate(`/${id}`);
   };
 
   return (
@@ -54,6 +56,9 @@ export const ListCrypto = () => {
           </>
         ) : null}
       </div>
+      <Link to="/" className="mx-2">
+        <Button variant="light">Voltar</Button>
+      </Link>
     </div>
   );
 };

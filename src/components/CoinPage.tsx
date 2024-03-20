@@ -1,10 +1,10 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
   useGetTopTenCryptoQuery,
   useGetCryptoGraphQuery,
 } from '../redux/services/cryptoApi';
 import Spinner from 'react-bootstrap/Spinner';
-import { Container, Row, Col, Image, Table } from 'react-bootstrap';
+import { Container, Row, Col, Image, Table, Button } from 'react-bootstrap';
 import { useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -23,7 +23,6 @@ export const CryptoDetails = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetTopTenCryptoQuery('');
 
-  // TODO: fazer grafico da moeda
   const {
     data: graphaAPIData,
     // error: graphError,
@@ -59,7 +58,7 @@ export const CryptoDetails = () => {
       <Container className="mt-5">
         <Row className="justify-content-center">
           <Spinner animation="border" role="status">
-            <span className="sr-only">Carregando...</span>
+            <span className="sr-only"></span>
           </Spinner>
         </Row>
       </Container>
@@ -69,7 +68,7 @@ export const CryptoDetails = () => {
   if (error || !data) {
     return (
       <div className="error-message">
-        Oh não, ocorreu um erro ou a criptomoeda não foi encontrada
+        Ocorreu um erro ou a criptomoeda não foi encontrada
       </div>
     );
   }
@@ -82,7 +81,7 @@ export const CryptoDetails = () => {
   }
 
   return (
-    <Container className="mt-5">
+    <Container className="my-5">
       <Row className="justify-content-center">
         <Col md={8}>
           <h2 className="text-center mb-4">Detalhes da Criptomoeda</h2>
@@ -101,6 +100,42 @@ export const CryptoDetails = () => {
                 <td>Preço Atual:</td>
                 <td>
                   {selectedCrypto.current_price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Capitalização de Mercado:</td>
+                <td>
+                  {selectedCrypto.market_cap.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Fornecimento Total:</td>
+                <td>
+                  {selectedCrypto.total_supply.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Volume Total:</td>
+                <td>
+                  {selectedCrypto.total_volume.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
+              </tr>
+              <tr>
+                <td>Variação de Preço nas Últimas 24 Horas:</td>
+                <td>
+                  {selectedCrypto.price_change_24h.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
                   })}
@@ -147,7 +182,10 @@ export const CryptoDetails = () => {
           {/* Adicione aqui o gráfico de preço, se possível */}
         </Col>
       </Row>
-      <Container className="d-flex" style={{ height: '500px' }}>
+      <Container
+        className="d-flex"
+        style={{ height: '500px', background: 'white', margin: '20px' }}
+      >
         <Line
           options={{
             maintainAspectRatio: false,
@@ -157,6 +195,9 @@ export const CryptoDetails = () => {
           data={graphData}
         />
       </Container>
+      <Link to="/list" className="mx-2">
+        <Button variant="light">Voltar</Button>
+      </Link>
     </Container>
   );
 };

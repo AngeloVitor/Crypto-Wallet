@@ -5,6 +5,10 @@ interface ImportMetaEnv {
   // more env variables...
 }
 
+interface Window {
+  ethereum: any;
+}
+
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }

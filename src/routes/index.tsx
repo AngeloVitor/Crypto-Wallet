@@ -3,6 +3,7 @@ import { CryptoDetails } from '../components/CoinPage';
 import { ListCrypto } from '../components/ListCrypto';
 import { App } from '../App';
 import { Welcome } from '../components/Welcome';
+import { ConnectMetamask } from '../components/ConnectMetamask';
 
 export const router = createBrowserRouter([
   {
@@ -14,9 +15,12 @@ export const router = createBrowserRouter([
         index: true,
       },
       {
+        path: '/metamask',
+        element: <ConnectMetamask />,        
+      },
+      {
         path: '/list',
-        element: <ListCrypto />,
-        
+        element: <ListCrypto />,        
       },
       {
         path: '/:id',
