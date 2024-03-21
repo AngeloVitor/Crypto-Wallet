@@ -1,3 +1,6 @@
+# Crypto Wallet
+Aqui na Wallet Crypto, nós fornecemos uma plataforma segura e fácil de usar para gerenciar suas criptomoedas.
+
 ## OBJETIVO:
 Desenvolver uma aplicação React que exiba uma lista de criptomoedas, permita ao usuário visualizar informações detalhadas sobre cada uma delas e interaja com uma wallet de criptomoedas, como Metamask, para demonstrar a habilidade de conectar a aplicação React a smart contracts.
 
