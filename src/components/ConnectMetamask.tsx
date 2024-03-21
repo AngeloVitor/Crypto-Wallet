@@ -85,7 +85,7 @@ export const ConnectMetamask = () => {
           )}
         </Card.Body>
       </Card>
-      <Link to="/list" className="mx-3">
+      <Link to="/" className="mx-3">
         <Button variant="light">Voltar</Button>
       </Link>
     </>

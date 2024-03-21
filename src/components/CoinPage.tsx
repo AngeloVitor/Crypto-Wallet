@@ -184,7 +184,7 @@ export const CryptoDetails = () => {
       </Row>
       <Container
         className="d-flex"
-        style={{ height: '500px', background: 'white', margin: '20px' }}
+        style={{ height: '500px', background: 'white', margin: 'auto', marginTop: '10px', marginBottom: '10px' }}
       >
         <Line
           options={{
@@ -195,7 +195,7 @@ export const CryptoDetails = () => {
           data={graphData}
         />
       </Container>
-      <Link to="/list" className="mx-2">
+      <Link to="/list" className="">
         <Button variant="light">Voltar</Button>
       </Link>
     </Container>

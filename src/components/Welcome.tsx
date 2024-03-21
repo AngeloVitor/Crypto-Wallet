@@ -20,12 +20,14 @@ export const Welcome = () => {
             criptomoedas por capitalização de mercado como também seguir para a
             pagina de se conectar com a MetaMask nos botões abaixo.
           </p>
-          <Link to="/list">
-            <Button variant="primary">Ir para Lista de Cryptos</Button>
-          </Link>
-          <Link to="/metamask" className="mx-2">
-            <Button variant="primary">Conectar com a Metamask</Button>
-          </Link>
+          <div className='d-flex'>
+            <Link to="/list">
+              <Button variant="primary">Ir para Lista de Cryptos</Button>
+            </Link>
+            <Link to="/metamask" className="mx-2">
+              <Button variant="primary">Conectar com a Metamask</Button>
+            </Link>
+          </div>
         </Col>
       </Row>
     </Container>
