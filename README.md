@@ -10,7 +10,7 @@ Desenvolver uma aplicação React que exiba uma lista de criptomoedas, permita a
 testado com a versão do NODE: v20.11.0 e versao do NPM: v10.5.0  <br/> `npm install`
 
 ### 2 - colocar o arquivo *.env* que foi enviado para o email na pasta util do projeto.
-O arquivo .env deve incluir uma variável de ambiente contendo a chave única necessária para acessar a API do CoinGecko.<br/>
+O arquivo .env deve incluir uma variável de ambiente contendo a chave única necessária para acessar a API do CoinGecko. Portanto foi criado um .env.example e basta remover o .exemple e adicionar a sua key do coingecko<br/>
 `VITE_coingeckoapicode=[ Chave Aqui ]`
 
 ### 3 - como iniciar o projeto:
