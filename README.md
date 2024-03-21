@@ -1,27 +1,30 @@
-# Crypto Wallet
+# React + TypeScript + Vite
 
-Aqui na Wallet Crypto, nós fornecemos uma plataforma segura e fácil de usar para gerenciar suas criptomoedas.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## OBJETIVO:
+Currently, two official plugins are available:
 
-Desenvolver uma aplicação React que exiba uma lista de criptomoedas, permita ao usuário visualizar informações detalhadas sobre cada uma delas e interaja com uma wallet de criptomoedas, como Metamask, para demonstrar a habilidade de conectar a aplicação React a smart contracts.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## INSTALAÇÃO:
+## Expanding the ESLint configuration
 
-### 1 - Instale as dependências do projeto utilizando npm:
-testado com a versão do NODE: v20.11.0 e versao do NPM: v10.5.0 <br/> `npm install`
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### 2 - colocar o arquivo *.env* que foi enviado para o email na pasta util do projeto.
-O arquivo .env deve incluir uma variável de ambiente contendo a chave única necessária para acessar a API do CoinGecko.<br/>
-`VITE_coingeckoapicode=[ Chave Aqui ]`
+- Configure the top-level `parserOptions` property like this:
 
-### 3 - como iniciar o projeto:
-`npm run dev`
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## DEPENDECIAS UTILIZADAS:
-`react-boostrap`
-`react-router-dom`
-`redux-toolkit`
-`react-query`
-`Vite`
-`metamask-SDK`
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
