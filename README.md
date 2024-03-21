@@ -24,3 +24,4 @@ O arquivo .env deve incluir uma variável de ambiente contendo a chave única ne
 `redux-toolkit`
 `react-query`
 `Vite`
+`metamask-SDK`
