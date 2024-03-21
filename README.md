@@ -1,29 +1,17 @@
-# React + TypeScript + Vite
+## OBJETIVO:
+Desenvolver uma aplicação React que exiba uma lista de criptomoedas, permita ao usuário visualizar informações detalhadas sobre cada uma delas e interaja com uma wallet de criptomoedas, como Metamask, para demonstrar a habilidade de conectar a aplicação React a smart contracts.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## INSTALAÇÃO:
 
-Currently, two official plugins are available:
+### 1 - Instale as dependências do projeto utilizando npm:
+testado com a versão do NODE: v20.11.0 e versao do NPM: v10.5.0  <br/> `npm install`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2 - colocar o arquivo *.env* que foi enviado para o email na pasta util do projeto.
+O arquivo .env deve incluir uma variável de ambiente contendo a chave única necessária para acessar a API do CoinGecko.<br/>
+`VITE_coingeckoapicode=[ Chave Aqui ]`
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### 3 - como iniciar o projeto:
+`npm run dev`
 
 ## DEPENDECIAS UTILIZADAS:
 `react-boostrap`
