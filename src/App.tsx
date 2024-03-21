@@ -11,7 +11,7 @@ export const App = () => {
         data-bs-theme="dark"
       >
         <Container className="justify-content-between">
-          <Navbar.Brand href="/">Wallet Crypto</Navbar.Brand>
+          <Navbar.Brand href="#">Wallet Crypto</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
             <Nav className="me-auto justify-content-end">
