@@ -16,7 +16,7 @@ O arquivo .env deve incluir uma variável de ambiente contendo a chave única ne
 ### 3 - como iniciar o projeto:
 `npm run dev`
 
-## DEPENDECIAS UTILIZADAS:
+## DEPENDENCIAS UTILIZADAS:
 `react-boostrap`
 `react-router-dom`
 `redux-toolkit`
