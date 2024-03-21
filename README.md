@@ -11,8 +11,9 @@ Desenvolver uma aplicação React que exiba uma lista de criptomoedas, permita a
 ### 1 - Instale as dependências do projeto utilizando npm:
 `npm install` testado com a versão do NODE: v20.11.0 e versao do NPM: v10.5.0
 
-### 2 - colocar a pasta *.env* que foi enviado para o email, dentro do projeto
-A pasta .env é uma variavel de ambiente contento a chave unica para acessar a api do coingecko
+### 2 - colocar o arquivo *.env* que foi enviado para o email na pasto util do projeto.
+O arquivo .env deve conter a variavel de ambiente contento a chave unica para acessar a api do coingecko
+`VITE_coingeckoapicode=[ Chave Aqui ]`
 
 ### 3 - como iniciar o projeto:
 `npm run dev`
