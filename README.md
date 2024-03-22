@@ -13,6 +13,8 @@ testado com a versão do NODE: v20.11.0 e versao do NPM: v10.5.0  <br/> `npm ins
 O arquivo .env deve incluir uma variável de ambiente contendo a chave única necessária para acessar a API do CoinGecko. Portanto foi criado um .env.example e basta remover o .example e adicionar a sua key do coingecko<br/>
 `VITE_coingeckoapicode=[ Chave Aqui ]`
 
+Acessar https://www.coingecko.com/en/developers/dashboard para saber qual é sua Chave
+
 ### 3 - como iniciar o projeto:
 `npm run dev`
 
